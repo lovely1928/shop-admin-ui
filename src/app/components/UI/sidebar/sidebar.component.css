@@ -17,13 +17,14 @@
 }
 ul{
   text-align: center;
+  margin-top: 10px;
 }
 
 li{
-  padding: 3px 5px ;
+  padding: 8px 20px ;
   display: flex;
   gap: 10px;
-  justify-content: center;
+  justify-content: left;
   /* align-items: center; */
   list-style-type: none;
   height: 35px;
