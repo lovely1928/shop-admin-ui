@@ -1,0 +1,52 @@
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 !important;
+}
+
+.header-app{
+  height: 45px;
+  background: #0F2027;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: white;
+  padding: 2px 4px;
+}
+.logo{
+  gap: 6px;
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+.logo p{
+  margin-top: 5px;
+}
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+
+.header-content{
+    width: 42%;
+    justify-content: space-between;
+}
+
+input{
+    height: 20px;
+    border-radius: 7px;
+    width: 40%;
+}

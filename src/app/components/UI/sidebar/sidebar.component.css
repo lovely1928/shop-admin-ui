@@ -1,0 +1,31 @@
+*{
+  margin: 0 ;
+  padding: 0;
+}
+.logo{
+  gap: 6px;
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+.logo p{
+  margin-top: 5px;
+}
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+ul{
+  text-align: center;
+}
+
+li{
+  padding: 3px 5px ;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  /* align-items: center; */
+  list-style-type: none;
+  height: 35px;
+  width: 100%;
+}
