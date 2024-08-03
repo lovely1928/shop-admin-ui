@@ -7,19 +7,25 @@ import { OrderComponent } from './features/order/order.component';
 import { UserComponent } from './features/user/user.component';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { MaterialModule } from './material/material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    HttpClientModule,
     HeaderComponent,
     SidebarComponent,
     OrderComponent,
     UserComponent,
     DashboardComponent,
     MaterialModule,
+    // BrowserAnimationsModule,
+    // BrowserModule,
+    CommonModule,
+    HttpClientModule
   ],
   providers: [],
   templateUrl: './app.component.html',
@@ -29,4 +35,5 @@ export class AppComponent {
   title = 'myapp';
   name = 'lovaly';
   public blah: string | undefined;
+  public isSideBarOpen = true;
 }

@@ -10,11 +10,6 @@
   height: 35px;
 }
 
-.app-sidebar {
-  width: 20%;
-  height: 100vh;
-}
-
 .app-header,
 .app-sidebar {
   background: #0f2027; /* fallback for old browsers */

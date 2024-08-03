@@ -1,7 +1,7 @@
 <div class="app-layout">
-  <app-sidebar class="app-sidebar"></app-sidebar>
+  <app-sidebar [isOpen]="isSideBarOpen" class="app-sidebar"></app-sidebar>
   <div class="content-container">
-    <app-header class="app-header"></app-header>
+    <app-header (toggleSidebarEvent)="isSideBarOpen=!isSideBarOpen" class="app-header"></app-header>
     <router-outlet />
   </div>
 </div>

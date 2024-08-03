@@ -1,7 +1,7 @@
 <aside class="main-sidebar">
   <div class="logo">
     <img src="logos/logo.png" />
-    <p>Grocify</p>
+    <p [class]="sideBarClass">Grocify</p>
   </div>
   <div>
     <ul>
@@ -9,21 +9,21 @@
         <div class="icon-container">
           <i class="material-icons">dashboard</i>
         </div>
-        <div class="path-item">Dashboard</div>
+        <div [class]="sideBarClass">Dashboard</div>
       </li>
       <li class="path-container" routerLink="/user">
         <div class="icon-container"><i class="material-icons">person</i></div>
-        <div class="path-item">User</div>
+        <div [class]="sideBarClass">User</div>
       </li>
       <li class="path-container" routerLink="/order">
         <div class="icon-container"><i class="material-icons">list_alt</i></div>
-        <div class="path-item">Orders</div>
+        <div [class]="sideBarClass">Orders</div>
       </li>
       <li class="path-container" routerLink="/product">
         <div class="icon-container">
           <i class="material-icons">storefront</i>
         </div>
-        <div class="path-item">Product</div>
+        <div [class]="sideBarClass">Product</div>
       </li>
     </ul>
   </div>
