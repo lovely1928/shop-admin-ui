@@ -20,7 +20,9 @@ export class UserComponent {
     const dialogRef = this.dialogue.open(UserformComponent);
 
     dialogRef.afterClosed().subscribe((result) => {
-      this.allUsers = [...this.allUsers, result];
+      if (result.user.name) { 
+        this.allUsers = [...this.allUsers, result];
+      }
       console.log(this.allUsers);
     });
   }

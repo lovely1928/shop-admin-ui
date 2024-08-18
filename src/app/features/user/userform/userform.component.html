@@ -1,26 +1,99 @@
 <h2 mat-dialog-title>Add User</h2>
 <mat-dialog-content>
   <form #userForm="ngForm">
-    <mat-form-field>
-      <mat-label>Name</mat-label>
-      <input matInput ngModel name="firstName" type="text" />
-    </mat-form-field>
+    <div class="form-input">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input
+          required="true"
+          matInput
+          ngModel
+          #name="ngModel"
+          name="firstName"
+          type="text"
+        />
+      </mat-form-field>
+      @if(!name.valid && name.touched){
+      <mat-error>Name is required</mat-error>
+      }
+    </div>
     <mat-form-field>
       <mat-label>Last</mat-label>
-      <input matInput ngModel name="lastName" type="text" />
+      <input
+        required="true"
+        matInput
+        ngModel
+        #lastName="ngModel"
+        name="lastName"
+        type="text"
+      />
     </mat-form-field>
+    @if(!lastName.valid && lastName.touched){
+    <mat-error>Last name is required</mat-error>
+    }
     <mat-form-field>
       <mat-label>Email</mat-label>
-      <input matInput ngModel name="email" type="text" />
+      <input
+        required="true"
+        #email="ngModel"
+        matInput
+        ngModel
+        name="email"
+        type="text"
+      />
     </mat-form-field>
+
+    <mat-error *ngIf="!email.valid && email.touched"
+      >Email is required</mat-error
+    >
     <mat-form-field>
       <mat-label>Phone</mat-label>
-      <input matInput ngModel name="phone" type="text" />
+      <input required="true" matInput ngModel #phone="ngModel" name="phone" type="text" />
     </mat-form-field>
+    <mat-error *ngIf="!phone.valid && phone.touched">Phone is required</mat-error>
     <mat-form-field>
-      <mat-label>age</mat-label>
-      <input matInput ngModel name="age" type="number" />
+      <mat-label>Birth Date</mat-label>
+      <input required="true" matInput [matDatepicker]="picker" />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Gender</mat-label>
+      <mat-select ngModel name="gender">
+        @for (gender of genderData; track gender) {
+        <mat-option [value]="gender.value">{{ gender.viewValue }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <div>
+      <mat-label>Preffered Shift</mat-label>
+      <mat-radio-group
+        name="shift"
+        ngModel
+        aria-label="Select your Preffered shift"
+      >
+        <mat-radio-button value="1">9-5</mat-radio-button>
+        <mat-radio-button value="2">7-3</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div>
+      <mat-label>Upload profile picture</mat-label>
+      <button type="button" mat-raised-button (click)="fileInput.click()">
+        Choose File
+      </button>
+      <input
+        hidden
+        (change)="onFileSelected()"
+        #fileInput
+        type="file"
+        id="file"
+      />
+    </div>
   </form>
 </mat-dialog-content>
 <mat-dialog-actions>
